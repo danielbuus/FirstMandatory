@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Master>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<title>@Umbraco.Field("siteTitle")</title>
+		<meta name="description" content=@Umbraco.Field("metaDescription")>
+		<meta name="keywords" content=@Umbraco.Field("metaKeywords")>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" href="/../content/bootstrap.min.css">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-default">
+				@Umbraco.RenderMacro("menu")
+			</nav>
+		</header>
+			
+		<div class="container">
+			@RenderBody()
+		</div>
+
+		<script src="/../scripts/jquery-2.2.2.min.js"></script>
+		<script src="/../scripts/bootstrap.min.js"></script>
+	</body>
+</html>
